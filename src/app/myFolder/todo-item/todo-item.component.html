@@ -1,0 +1,24 @@
+<div [ngClass]="setClasses()">
+
+  <p>
+    <input 
+    (change)="onToggle(todo)" 
+    type="checkbox"
+    id="{{ todo.id }}"
+    [checked]="todo.completed"
+    >
+    <label for="{{ todo.id }}">
+        {{ todo.title }}
+    </label>
+
+    <input #newTache
+    (keyup.enter)="addTache(newTache.value)" placeholder="Edit task name...">
+
+  <button (click)="addTache(newTache.value)">Edit</button>
+    <button (click)="onDelete(todo)"class="del">x</button>
+   </p>
+
+
+</div>
+
+
